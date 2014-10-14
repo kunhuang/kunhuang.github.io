@@ -18,7 +18,7 @@
 	
 	$.fn.snow = function(options){
 	
-			var $flake 			= $('<div id="flake" />').css({'position': 'absolute', 'top': '-50px'}).html('Shalin Luo'),
+			var $flake 			= $('<div id="flake" />').css({'position': 'absolute', 'top': '-50px'}).html('<img src="shalin.png"/>'),
 				documentHeight 	= $(document).height(),
 				documentWidth	= $(document).width(),
 				defaults		= {
