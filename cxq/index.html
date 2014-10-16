@@ -20,6 +20,9 @@
     <script type="text/javascript" src="koala.js?1.9.4"></script>
     <!--<![endif]-->
     <link rel="stylesheet" type="text/css" href="koala.css?1.9.4"/>
+    <!-- SweetAlert -->
+    <script src="lib/sweet-alert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="lib/sweet-alert.css">
   </head>
   <body>
     <div id="center">
@@ -48,6 +51,10 @@
       <a href="http://d3js.org/">D3</a>
     </div>
 
+    <script type="text/javascript">
+      swal({title: "Sweet!",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
+    </script>
+    
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
@@ -171,6 +178,7 @@
       // Code left intentionally unminimized for your reading pleasure.
 
       (function() {
+
         window.shownFile = 'none';
 
         // If an error happens I want to know about it!
