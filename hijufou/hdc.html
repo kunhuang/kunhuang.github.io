@@ -355,37 +355,78 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 <script type="text/javascript">
 // 点击事件
 (function(){
-	// var sTime=0,eTime=0;
-	// $(".closeBtn").bind("touchstart",function(e){
-	// 	e.preventDefault();
-	// 	sTime=new Date().getTime();
-	// });
-	// $(".closeBtn").bind("touchend",function(e){
-	// 	e.preventDefault();
-	// 	eTime=new Date().getTime();
-	// 	if((eTime - sTime) >300){
-	// 		$(this).parent().css("display","none");
-	// 	}
-	// });
+	var sTime=0,eTime=0;
+	$(".closeBtn").bind("touchstart",function(e){
+		e.preventDefault();
+		sTime=new Date().getTime();
+	});
+	$(".closeBtn").bind("touchend",function(e){
+		e.preventDefault();
+		eTime=new Date().getTime();
+		if((eTime - sTime) >300){
+			$(this).parent().css("display","none");
+		}
+	});
 
 	//活动详情链接
 	//Edit by Kun
-	$(".closeBtn").click(function (e) {
-		console.log($(this));
-		$(this).parent().css("display", "none");
-	})
-	$("#img2-1").click(function(){
-		$(".hideBg1").css("display", "block");
+	$("#img2-1").bind("touchstart",function(e){
+		e.preventDefault();
+		sTime=new Date().getTime();
 	});
-	$("#img2-2").click(function(){
-		$(".hideBg2").css("display", "block");
+	$("#img2-1").bind("touchend",function(e){
+		e.preventDefault();
+		eTime=new Date().getTime();
+		if((eTime - sTime) >300){
+			$(".hideBg1").css("display", "block");
+		}
 	});
-	$("#img2-3").click(function(){
-		$(".hideBg3").css("display", "block");
+	$("#img2-2").bind("touchstart",function(e){
+		e.preventDefault();
+		sTime=new Date().getTime();
 	});
-	$("#img2-4").click(function(){
-		$(".hideBg4").css("display", "block");
+	$("#img2-2").bind("touchend",function(e){
+		e.preventDefault();
+		eTime=new Date().getTime();
+		if((eTime - sTime) >300){
+			$(".hideBg2").css("display", "block");
+		}
 	});
+	$("#img2-3").bind("touchstart",function(e){
+		e.preventDefault();
+		sTime=new Date().getTime();
+	});
+	$("#img2-3").bind("touchend",function(e){
+		e.preventDefault();
+		eTime=new Date().getTime();
+		if((eTime - sTime) >300){
+			$(".hideBg3").css("display", "block");
+		}
+	});
+	$("#img2-4").bind("touchstart",function(e){
+		e.preventDefault();
+		sTime=new Date().getTime();
+	});
+	$("#img2-4").bind("touchend",function(e){
+		e.preventDefault();
+		eTime=new Date().getTime();
+		if((eTime - sTime) >300){
+			$(".hideBg4").css("display", "block");
+		}
+	});
+
+	// $("#img2-1").click(function(){
+	// 	$(".hideBg1").css("display", "block");
+	// });
+	// $("#img2-2").click(function(){
+	// 	$(".hideBg2").css("display", "block");
+	// });
+	// $("#img2-3").click(function(){
+	// 	$(".hideBg3").css("display", "block");
+	// });
+	// $("#img2-4").click(function(){
+	// 	$(".hideBg4").css("display", "block");
+	// });
 })();
 // =====================
 var dataC = new Array(); 
