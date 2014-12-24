@@ -205,7 +205,7 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 	width: 100%;
 	margin-top: 10px;
 	border-radius: 10px;
-	background-image: url(./img/hd/kuangkuang.png);
+	background-image: url(./img/hd/cmtBox.png);
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -367,23 +367,15 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 <script type="text/javascript">
 // 点击事件
 (function(){
-	var sTime=0,eTime=0;
-	$(".closeBtn").bind("touchstart",function(e){
-		e.preventDefault();
-		sTime=new Date().getTime();
-	});
-	$(".closeBtn").bind("touchend",function(e){
-		e.preventDefault();
-		eTime=new Date().getTime();
-		$(this).parent().css("display","none");
-		if((eTime - sTime) >300){
-			$(this).parent().css("display","none");
-		}
-	});
-
 	//活动详情链接
 	//Edit by Kun
+	//touchmove的作用是辨别用户是在点击链接还是翻页（防止用户在翻页时候触到链接而导致意外的结果）
 	var touchmove = false;
+	$(".closeBtn").bind("touchend",function(e){
+		e.preventDefault();
+		$(this).parent().css("display","none");
+	});
+
 	$("#img2-1").bind("touchstart",function(e){
 		e.preventDefault();
 		touchmove = false;
