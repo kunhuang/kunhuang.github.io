@@ -103,14 +103,17 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 #img2-2{position: absolute;right: 0;top: 50%;}
 #img2-3{position: absolute;left: 0;top: 70%;}
 #img2-4{position: absolute;right: 0;top: 76%;}
-.closeBtn{position: absolute;right: 20px;top: 20px;
+
+.closeBtn{position: absolute; top:0; right:0; z-index: 1001}
+/*.closeBtn{position: absolute;right: 20px;top: 20px;
 	height: 66px;width: 100px;
 	line-height: 66px;
 	text-align: center;font-size: 40px;
 	color: blue;
 	border: 2px solid blue;
 	border-radius: 10px;
-}
+	z-index: 3;
+}*/
 .hideDiv{
 	/*display: none;*/position: absolute;top: 0;left: 0;height: 100%;width: 100%;
 	background-size: cover;
@@ -151,7 +154,9 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 	-webkit-animation:fadeInTopBig 1s .8s ease both;
 	-moz-animation:fadeInTopBig 1s .8s ease both;
 }
-#img8-1{position: absolute; top:0; width: inherit;}
+#img7-1{width: inherit;}
+#img7-2{width: inherit;}
+#img8-1{width: inherit;}
 
 .link-btn{
 	position: absolute;
@@ -179,8 +184,10 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 -moz-transform:translateY(0)}
 }
 .cmtContainer{
+	/*
 	position: absolute;
 	top: 12%;
+	*/
 	height: 76%;
 	width: 100%;
 	overflow: hidden;
@@ -198,7 +205,7 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 	width: 100%;
 	margin-top: 10px;
 	border-radius: 10px;
-	background-image: url(./img/hd/blue.jpg);
+	background-image: url(./img/hd/kuangkuang.png);
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -280,7 +287,8 @@ ul,li{padding: 0;margin: 0;list-style: none;}
 <body class="card2" data-wx-title="杭州电子科技大学学生会" data-wx-desc="杭州电子科技大学学生会 －聚否"
 data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 <img class="i-load" src="./img/coverloading1.gif"></img>
-<div id="ac" class="playing"></div> 
+<!-- commented by Kun, 不知道这个div啥用，它会遮挡住“关闭”按钮 -->
+<!-- <div id="ac" class="playing"></div>  -->
 <div class="c-pages">
 <section class="sec" id="sec1">
 	<img id="img1-1" class="slideB" src="./img/hd/img1-1.png">
@@ -298,25 +306,25 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 	<img id="img2-4" class="slideR" src="./img/hd/img2-5.png">
 
 	<div class="hideDiv hideBg1">
-		<div class="closeBtn">关闭</div>
+		<img class="closeBtn" src="./img/hd/close-blue.png">
 		<img id="img3-1" class="slideT" src="./img/hd/img3-1.png">
 		<img id="img3-2" class="slideR" src="./img/hd/img3-2.png">
 	</div>
 
 	<div class="hideDiv hideBg2">
-		<div class="closeBtn">关闭</div>
+		<img class="closeBtn" src="./img/hd/close-blue.png">
 		<img id="img4-1" class="slideB" src="./img/hd/img4-1.png">
 		<img id="img4-2" class="slideT" src="./img/hd/img4-2.png">
 		<img id="img4-3" class="slideR" src="./img/hd/img4-3.png">
 	</div>
 
 	<div class="hideDiv hideBg3">
-		<div class="closeBtn">关闭</div>
+		<img class="closeBtn" src="./img/hd/close-blue.png">
 		<img id="img5-1" class="slideT" src="./img/hd/img5-1.png">
 	</div>
 
 	<div class="hideDiv hideBg4">
-		<div class="closeBtn" style="color:white;border-color:white;">关闭</div>
+		<img class="closeBtn" src="./img/hd/close-white.png">
 		<img id="img6-1" class="slideL" src="./img/hd/img6-1.png">
 		<img id="img6-2" class="slideT" src="./img/hd/img6-2.png">
 	</div>
@@ -324,34 +332,38 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
     <div class="i-arrow"></div>
 </section>
 <section class="sec lazy" id="sec3" data-lazyrole="bg" data-src="./img/hd/img3.jpg">
-    <!-- 留言评论页 -->
-    <div class="cmtContainer">
-    	<ul class="cmtBox" id="cmtBox">
+	<img id="img7-1" class="slideL" src="./img/hd/img7-1.png">
+ 	<img id="img7-2" class="slideL" src="./img/hd/img7-2.png">
+	<!-- 留言评论页 -->
+  <div class="cmtContainer">
+  	<ul class="cmtBox" id="cmtBox">
 
-    	</ul>
-    </div>
-    <!--  -->
-    <!-- <div class="swapbtn">我要留言</div> -->	
+  	</ul>
+  </div>
+  <div class="msgBox">
+    	<textarea class="msgT" placeholder="我要留言(最多40字)" id="textbox" oninput="check();"></textarea>
+    	<span class="sBtn" id="sBtn" onclick="send()">发送</span>
+	</div>
+  <!--  -->
+  <!-- <div class="swapbtn">我要留言</div> -->	
 	<div class="i-arrow"></div>
 </section>
-<section class="sec lazy" id="sec4" data-lazyrole="bg" data-src="./img/hd/img8_02.jpg">
+<section class="sec lazy" id="sec4" data-lazyrole="bg" data-src="./img/hd/img8.jpg">
 	<img id="img8-1" class="slideL" src="./img/hd/img8-1.png">
+	
 </section>
 	
 </div>
-<audio id="bgm" loop="loop" src="" autoplay="autoplay"></audio>
+<audio id="bgm" loop="loop" src="music.mp3" autoplay="autoplay"></audio>
 
-<div class="msgBox">
-    	<textarea class="msgT" placeholder="我要留言(最多40字)" id="textbox" oninput="check();"></textarea>
-    	<span class="sBtn" id="sBtn" onclick="send()">发送</span>
-</div>
+
 </body>
 <!-- @DEFINE {nodep:true} -->
 <script src="./lib/jquery-1.11.0.min.js" type="text/javascript"></script>
 <script src="./lib/jstorage.js" type="text/javascript"></script>
 <script src="./js/card2.1.min.js" type="text/javascript"></script>
 <script src="./js/card.wxshare.js" type="text/javascript"></script>
-<!-- <script src="./lib/tongji.js" type="text/javascript"></script> -->
+<script src="./lib/tongji.js" type="text/javascript"></script>
 <script type="text/javascript">
 // 点击事件
 (function(){
@@ -363,6 +375,7 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 	$(".closeBtn").bind("touchend",function(e){
 		e.preventDefault();
 		eTime=new Date().getTime();
+		$(this).parent().css("display","none");
 		if((eTime - sTime) >300){
 			$(this).parent().css("display","none");
 		}
@@ -370,63 +383,48 @@ data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
 
 	//活动详情链接
 	//Edit by Kun
+	var touchmove = false;
 	$("#img2-1").bind("touchstart",function(e){
 		e.preventDefault();
-		sTime=new Date().getTime();
+		touchmove = false;
 	});
+	$("#img2-1").bind("touchmove", function(){touchmove = true})
 	$("#img2-1").bind("touchend",function(e){
 		e.preventDefault();
 		eTime=new Date().getTime();
-		if((eTime - sTime) >300){
+		if(touchmove == false)
 			$(".hideBg1").css("display", "block");
-		}
 	});
 	$("#img2-2").bind("touchstart",function(e){
 		e.preventDefault();
-		sTime=new Date().getTime();
+		touchmove = false;
 	});
+	$("#img2-2").bind("touchmove", function(){touchmove = true})
 	$("#img2-2").bind("touchend",function(e){
 		e.preventDefault();
-		eTime=new Date().getTime();
-		if((eTime - sTime) >300){
+		if(touchmove == false)
 			$(".hideBg2").css("display", "block");
-		}
 	});
 	$("#img2-3").bind("touchstart",function(e){
 		e.preventDefault();
-		sTime=new Date().getTime();
+		touchmove = false;
 	});
+	$("#img2-3").bind("touchmove", function(){touchmove = true})
 	$("#img2-3").bind("touchend",function(e){
 		e.preventDefault();
-		eTime=new Date().getTime();
-		if((eTime - sTime) >300){
+		if(touchmove == false)
 			$(".hideBg3").css("display", "block");
-		}
 	});
 	$("#img2-4").bind("touchstart",function(e){
 		e.preventDefault();
-		sTime=new Date().getTime();
+		touchmove = false;
 	});
+	$("#img2-4").bind("touchmove", function(){touchmove = true})
 	$("#img2-4").bind("touchend",function(e){
 		e.preventDefault();
-		eTime=new Date().getTime();
-		if((eTime - sTime) >300){
+		if(touchmove == false)
 			$(".hideBg4").css("display", "block");
-		}
 	});
-
-	// $("#img2-1").click(function(){
-	// 	$(".hideBg1").css("display", "block");
-	// });
-	// $("#img2-2").click(function(){
-	// 	$(".hideBg2").css("display", "block");
-	// });
-	// $("#img2-3").click(function(){
-	// 	$(".hideBg3").css("display", "block");
-	// });
-	// $("#img2-4").click(function(){
-	// 	$(".hideBg4").css("display", "block");
-	// });
 })();
 // =====================
 var dataC = new Array(); 
