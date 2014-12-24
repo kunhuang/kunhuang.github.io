@@ -1,0 +1,143 @@
+@keyframes sa-fadein{ 
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-webkit-keyframes sa-fadein{ 
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-moz-keyframes sa-fadein{ 
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@-o-keyframes sa-fadein{ 
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes sa-fadeout{ 
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-webkit-keyframes sa-fadeout{ 
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-moz-keyframes sa-fadeout{ 
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@-o-keyframes sa-fadeout{ 
+	0% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@keyframes sa-fadeinup{ 
+	0% {opacity: 0;transform: translate3d(0px,-100%,0px);}
+	100% {opacity: 1;transform: none;}
+}
+@-webkit-keyframes sa-fadeinup{ 
+	0% {opacity: 0;-webkit-transform: translate3d(0px,-100%,0px);}
+	100% {opacity: 1;-webkit-transform: none;}
+}
+@-moz-keyframes sa-fadeinup{ 
+	0% {opacity: 0;-moz-transform: translate3d(0px,-100%,0px);}
+	100% {opacity: 1;-moz-transform: none;}
+}
+@-o-keyframes sa-fadeinup{ 
+	0% {opacity: 0;-o-transform: translate3d(0px,-100%,0px);}
+	100% {opacity: 1;-o-transform: none;}
+}
+
+@keyframes sa-fadeindown{ 
+	0% {opacity: 0;transform: translate3d(0px,100%,0px);}
+	100% {opacity: 1;transform: none;}
+}
+@-webkit-keyframes sa-fadeindown{ 
+	0% {opacity: 0;-webkit-transform: translate3d(0px,100%,0px);}
+	100% {opacity: 1;-webkit-transform: none;}
+}
+@-moz-keyframes sa-fadeindown{ 
+	0% {opacity: 0;-moz-transform: translate3d(0px,100%,0px);}
+	100% {opacity: 1;-moz-transform: none;}
+}
+@-o-keyframes sa-fadeindown{ 
+	0% {opacity: 0;-o-transform: translate3d(0px,100%,0px);}
+	100% {opacity: 1;-o-transform: none;}
+}
+
+@keyframes sa-fadeinleft{ 
+	0% {opacity: 0;transform: translate3d(-100%,0px,0px);}
+	100% {opacity: 1;transform: none;}
+}
+@-webkit-keyframes sa-fadeinleft{ 
+	0% {opacity: 0;-webkit-transform: translate3d(-100%,0px,0px);}
+	100% {opacity: 1;-webkit-transform: none;}
+}
+@-moz-keyframes sa-fadeinleft{ 
+	0% {opacity: 0;-moz-transform: translate3d(-100%,0px,0px);}
+	100% {opacity: 1;-moz-transform: none;}
+}
+@-o-keyframes sa-fadeinleft{ 
+	0% {opacity: 0;-o-transform: translate3d(-100%,0px,0px);}
+	100% {opacity: 1;-o-transform: none;}
+}
+
+@keyframes sa-fadeinright{ 
+	0% {opacity: 0;transform: translate3d(100%,0px,0px);}
+	100% {opacity: 1;transform: none;}
+}
+@-webkit-keyframes sa-fadeinright{ 
+	0% {opacity: 0;-webkit-transform: translate3d(100%,0px,0px);}
+	100% {opacity: 1;-webkit-transform: none;}
+}
+@-moz-keyframes sa-fadeinright{ 
+	0% {opacity: 0;-moz-transform: translate3d(100%,0px,0px);}
+	100% {opacity: 1;-moz-transform: none;}
+}
+@-o-keyframes sa-fadeinright{ 
+	0% {opacity: 0;-o-transform: translate3d(100%,0px,0px);}
+	100% {opacity: 1;-o-transform: none;}
+}
+
+@keyframes sa-fullrotate{ 
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+@-webkit-keyframes sa-fullrotate{ 
+	0% {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes sa-fullrotate{ 
+	0% {-moz-transform: rotate(0deg);}
+	100% {-moz-transform: rotate(360deg);}
+}
+@-o-keyframes sa-fullrotate{ 
+	0% {-o-transform: rotate(0deg);}
+	100% {-o-transform: rotate(360deg);}
+}
+
+@-webkit-keyframes sa-flip{
+0%{-webkit-transform:perspective(400px) rotateY(0);
+-webkit-animation-timing-function:ease-out}
+40%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(170deg);
+-webkit-animation-timing-function:ease-out}
+50%{-webkit-transform:perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+-webkit-animation-timing-function:ease-in}
+80%{-webkit-transform:perspective(400px) rotateY(360deg) scale(.95);
+-webkit-animation-timing-function:ease-in}
+100%{-webkit-transform:perspective(400px) scale(1);
+-webkit-animation-timing-function:ease-in}
+}
+@-moz-keyframes sa-flip{
+0%{-moz-transform:perspective(400px) rotateY(0);
+-moz-animation-timing-function:ease-out}
+40%{-moz-transform:perspective(400px) translateZ(150px) rotateY(170deg);
+-moz-animation-timing-function:ease-out}
+50%{-moz-transform:perspective(400px) translateZ(150px) rotateY(190deg) scale(1);
+-moz-animation-timing-function:ease-in}
+80%{-moz-transform:perspective(400px) rotateY(360deg) scale(.95);
+-moz-animation-timing-function:ease-in}
+100%{-moz-transform:perspective(400px) scale(1);
+-moz-animation-timing-function:ease-in}
+}

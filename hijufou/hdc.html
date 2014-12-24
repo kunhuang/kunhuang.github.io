@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=640, target-densitydpi=320, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="description" content="杭州电子科技大学学生会"/>
+<meta name="keywords" content="杭州电子科技大学学生会"/>
+<title>杭州电子科技大学学生会</title>
+<!-- @STYLE -->
+<link rel="stylesheet" type="text/css" href="./css/card3.css" ></link>
+<link rel="stylesheet" type="text/css" href="./css/simpleanimation.css" ></link>
+<style>
+ul,li{padding: 0;margin: 0;list-style: none;}
+.i-arrow{
+    background-image:url(./img/whitecontrols.png);
+}
+/*#ac{background-image: url(./img/whitecontrols.png);}*/
+#sec1{
+    background-image:url(./img/hd/img1.jpg);
+}
+#img1-1{left: 12.5%;}
+#img1-2{left:0; }
+#img1-3{left: 32.8%;}
+#img1-4{left:65.625%; }
+#img1-5{right:0; }
+#img1-6{position: absolute;top: 25.8%;}
+.slideB{position: absolute;bottom: 0;
+	-webkit-animation:fadeInDownBig 1s .2s ease both;
+	-moz-animation:fadeInDownBig 1s .2s ease both;}
+	@-webkit-keyframes fadeInDownBig{
+	0%{opacity:1;
+	-webkit-transform:translateY(2000px)}
+	100%{opacity:1;
+	-webkit-transform:translateY(0)}
+	}
+	@-moz-keyframes fadeInDownBig{
+	0%{opacity:1;
+	-moz-transform:translateY(2000px)}
+	100%{opacity:1;
+	-moz-transform:translateY(0)}
+}
+.slideL{
+	-webkit-animation:fadeInLeftBig 1s .2s ease both;
+	-moz-animation:fadeInLeftBig 1s .2s ease both;}
+	@-webkit-keyframes fadeInLeftBig{
+	0%{opacity:0;
+	-webkit-transform:translateX(-2000px)}
+	100%{opacity:1;
+	-webkit-transform:translateX(0)}
+	}
+	@-moz-keyframes fadeInLeftBig{
+	0%{opacity:0;
+	-moz-transform:translateX(-2000px)}
+	100%{opacity:1;
+	-moz-transform:translateX(0)}
+
+}
+.slideR{
+	-webkit-animation:fadeInRightBig 1s .2s ease both;
+	-moz-animation:fadeInRightBig 1s .2s ease both;}
+	@-webkit-keyframes fadeInRightBig{
+	0%{opacity:0;
+	-webkit-transform:translateX(2000px)}
+	100%{opacity:1;
+	-webkit-transform:translateX(0)}
+	}
+	@-moz-keyframes fadeInRightBig{
+	0%{opacity:0;
+	-moz-transform:translateX(2000px)}
+	100%{opacity:1;
+	-moz-transform:translateX(0)}
+}
+.slideT{
+	-webkit-animation:fadeInTopBig 1s .2s ease both;
+	-moz-animation:fadeInTopBig 1s .2s ease both;}
+	@-webkit-keyframes fadeInTopBig{
+	0%{opacity:0;
+	-webkit-transform:translateY(-2000px)}
+	100%{opacity:1;
+	-webkit-transform:translateX(0)}
+	}
+	@-moz-keyframes fadeInTopBig{
+	0%{opacity:0;
+	-moz-transform:translateY(-2000px)}
+	100%{opacity:1;
+	-moz-transform:translateX(0)}
+}
+.fade{
+	-webkit-animation:flash 1s .8s ease both;
+	-moz-animation:flash 1s .8s ease both;}
+	@-webkit-keyframes flash{
+	0%,50%,100%{opacity: 1;}
+	25%,75%{opacity: 0;}
+	}
+	@-moz-keyframes flash{
+	0%,50%,100%{opacity: 1;}
+	25%,75%{opacity: 0;}
+}
+#img2-1{position: absolute;left: 0;top: 40.8%;}
+#img2-2{position: absolute;right: 0;top: 50%;}
+#img2-3{position: absolute;left: 0;top: 70%;}
+#img2-4{position: absolute;right: 0;top: 76%;}
+.closeBtn{position: absolute;right: 20px;top: 20px;
+	height: 66px;width: 100px;
+	line-height: 66px;
+	text-align: center;font-size: 40px;
+	color: blue;
+	border: 2px solid blue;
+	border-radius: 10px;
+}
+.hideDiv{
+	/*display: none;*/position: absolute;top: 0;left: 0;height: 100%;width: 100%;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.hideBg1{
+	display: none;background-image: url(./img/hd/img3.jpg);
+}
+.hideBg2{
+	display: none;background-image: url(./img/hd/img4.jpg);
+}
+.hideBg3{
+	display: none;background-image: url(./img/hd/img5.jpg);
+}
+.hideBg4{
+	display: none;background-image: url(./img/hd/img6.jpg);
+}
+
+#img3-1{position: absolute;top: 0;left: 0;}
+#img3-2{position: absolute;right: 0;top: 20%;
+	-webkit-animation:fadeInRightBig 1s 1.2s ease both;
+	-moz-animation:fadeInRightBig 1s 1.2s ease both;
+}
+#img4-1{position: absolute;left: 0;top: 0;height: 90%;}
+#img4-2{position: absolute;top: 0;left: 18%;
+	-webkit-animation:fadeInTopBig 1s .6s ease both;
+	-moz-animation:fadeInTopBig 1s .6s ease both;
+}
+#img4-3{position: absolute;right: 0;top: 36%;
+	-webkit-animation:fadeInRightBig 1s 1.6s ease both;
+	-moz-animation:fadeInRightBig 1s 1.6s ease both;
+}
+#img5-1{position: absolute;top: 0;left: 20%;height: 90%;}
+#img5-2{position: absolute;bottom: 0;left: 31.25%;}
+#img6-1{position: absolute;top: 25%;left: 0;}
+#img6-2{position: absolute;top: 0;right: 0;
+	-webkit-animation:fadeInTopBig 1s .8s ease both;
+	-moz-animation:fadeInTopBig 1s .8s ease both;
+}
+#img8-1{position: absolute; top:0; width: inherit;}
+
+.link-btn{
+	position: absolute;
+	top: 20%;
+	left: 100px;
+	width: 50%;
+	height: 80px;
+	line-height: 80px;
+	border: 2px solid orange;
+}
+
+.slideDown{
+	-webkit-animation:fadeInUpBig .6s  ease both;
+-moz-animation:fadeInUpBig .6s ease both;}
+@-webkit-keyframes fadeInUpBig{
+0%{opacity:1;
+-webkit-transform:translateY(-240px)}
+100%{opacity:1;
+-webkit-transform:translateY(0)}
+}
+@-moz-keyframes fadeInUpBig{
+0%{opacity:1;
+-moz-transform:translateY(-240px)}
+100%{opacity:1;
+-moz-transform:translateY(0)}
+}
+.cmtContainer{
+	position: absolute;
+	top: 12%;
+	height: 76%;
+	width: 100%;
+	overflow: hidden;
+}
+.cmtBox{
+	width: 90%;
+	height: 100%;
+	margin: 0 auto;
+}
+.cmtBox li{
+	display: block;
+	min-height: 184px;/*最低高度*/
+	max-height: 226px;/*最高高度*/
+	overflow: hidden;
+	width: 100%;
+	margin-top: 10px;
+	border-radius: 10px;
+	background-image: url(./img/hd/blue.jpg);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.cmtBox li .usrInfo{
+	width: 90%;margin: 0 auto;
+	display: block;
+}
+.cmtBox li .usrInfo .circle{
+	float: left;
+	margin: 5px 20px 5px 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 40px;
+
+}
+.cmtBox li .usrInfo .username{
+	float: left;
+	font-size: 36px;
+	line-height: 90px;
+}
+.cmtBox li .content{
+	word-wrap:word-break;
+	word-break:break-all;
+	clear: both;
+	display: block;
+	width: 90%;
+	margin: 20px auto;
+	font-size: 32px;
+	line-height: 42px;
+
+}
+.swapbtn{
+	position: absolute;
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	width: 60%;
+	left: 20%;
+	top: 88%;
+	height: 66px;
+	line-height: 66px;
+	border-radius: 10px;
+	background-color: #fa5a5a;
+}
+
+.msgBox{
+	display: none;
+	z-index: 20000;
+	position: fixed;
+	width: 100%;
+	height: 66px;
+	bottom: 0;
+	left: 0;
+	background-color: #d6d6d6;
+}
+.msgT{
+	font-size: 30px;
+	/*margin-top: 13px;*/
+	position: absolute;
+	left: 6.25%;
+	bottom: 13px;
+	width: 75%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #d6d6d6;
+	color: black;
+}
+.sBtn{
+	display: block;
+	position: absolute;
+	right: 6.25%;
+	line-height: 66px;
+	font-size: 30px;
+	color: #713953;
+}
+</style>
+</head>
+<body class="card2" data-wx-title="杭州电子科技大学学生会" data-wx-desc="杭州电子科技大学学生会 －聚否"
+data-wx-img="http://test.hijufou.com:9999/img/zlsl/logo.jpg">
+<img class="i-load" src="./img/coverloading1.gif"></img>
+<div id="ac" class="playing"></div> 
+<div class="c-pages">
+<section class="sec" id="sec1">
+	<img id="img1-1" class="slideB" src="./img/hd/img1-1.png">
+	<img id="img1-2" class="slideB" src="./img/hd/img1-2.png">
+	<img id="img1-3" class="slideB" src="./img/hd/img1-3.png">
+	<img id="img1-4" class="slideB" src="./img/hd/img1-4.png">
+	<img id="img1-5" class="slideB" src="./img/hd/img1-5.png">
+	<img id="img1-6" class="fade" src="./img/hd/img1-6.png">
+<div class="i-arrow"></div>
+</section>
+<section class="sec lazy" id="sec2" data-lazyrole="bg" data-src="./img/hd/img2.jpg">
+	<img id="img2-1" class="slideL" src="./img/hd/img2-2.png">
+	<img id="img2-2" class="slideR" src="./img/hd/img2-3.png">
+	<img id="img2-3" class="slideL" src="./img/hd/img2-4.png">
+	<img id="img2-4" class="slideR" src="./img/hd/img2-5.png">
+
+	<div class="hideDiv hideBg1">
+		<div class="closeBtn">关闭</div>
+		<img id="img3-1" class="slideT" src="./img/hd/img3-1.png">
+		<img id="img3-2" class="slideR" src="./img/hd/img3-2.png">
+	</div>
+
+	<div class="hideDiv hideBg2">
+		<div class="closeBtn">关闭</div>
+		<img id="img4-1" class="slideB" src="./img/hd/img4-1.png">
+		<img id="img4-2" class="slideT" src="./img/hd/img4-2.png">
+		<img id="img4-3" class="slideR" src="./img/hd/img4-3.png">
+	</div>
+
+	<div class="hideDiv hideBg3">
+		<div class="closeBtn">关闭</div>
+		<img id="img5-1" class="slideT" src="./img/hd/img5-1.png">
+	</div>
+
+	<div class="hideDiv hideBg4">
+		<div class="closeBtn" style="color:white;border-color:white;">关闭</div>
+		<img id="img6-1" class="slideL" src="./img/hd/img6-1.png">
+		<img id="img6-2" class="slideT" src="./img/hd/img6-2.png">
+	</div>
+
+    <div class="i-arrow"></div>
+</section>
+<section class="sec lazy" id="sec3" data-lazyrole="bg" data-src="./img/hd/img3.jpg">
+    <!-- 留言评论页 -->
+    <div class="cmtContainer">
+    	<ul class="cmtBox" id="cmtBox">
+
+    	</ul>
+    </div>
+    <!--  -->
+    <!-- <div class="swapbtn">我要留言</div> -->	
+	<div class="i-arrow"></div>
+</section>
+<section class="sec lazy" id="sec4" data-lazyrole="bg" data-src="./img/hd/img8_02.jpg">
+	<img id="img8-1" class="slideL" src="./img/hd/img8-1.png">
+</section>
+	
+</div>
+<audio id="bgm" loop="loop" src="" autoplay="autoplay"></audio>
+
+<div class="msgBox">
+    	<textarea class="msgT" placeholder="我要留言(最多40字)" id="textbox" oninput="check();"></textarea>
+    	<span class="sBtn" id="sBtn" onclick="send()">发送</span>
+</div>
+</body>
+<!-- @DEFINE {nodep:true} -->
+<script src="./lib/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="./lib/jstorage.js" type="text/javascript"></script>
+<script src="./js/card2.1.min.js" type="text/javascript"></script>
+<script src="./js/card.wxshare.js" type="text/javascript"></script>
+<!-- <script src="./lib/tongji.js" type="text/javascript"></script> -->
+<script type="text/javascript">
+// 点击事件
+(function(){
+	// var sTime=0,eTime=0;
+	// $(".closeBtn").bind("touchstart",function(e){
+	// 	e.preventDefault();
+	// 	sTime=new Date().getTime();
+	// });
+	// $(".closeBtn").bind("touchend",function(e){
+	// 	e.preventDefault();
+	// 	eTime=new Date().getTime();
+	// 	if((eTime - sTime) >300){
+	// 		$(this).parent().css("display","none");
+	// 	}
+	// });
+
+	//活动详情链接
+	//Edit by Kun
+	$(".closeBtn").click(function (e) {
+		console.log($(this));
+		$(this).parent().css("display", "none");
+	})
+	$("#img2-1").click(function(){
+		$(".hideBg1").css("display", "block");
+	});
+	$("#img2-2").click(function(){
+		$(".hideBg2").css("display", "block");
+	});
+	$("#img2-3").click(function(){
+		$(".hideBg3").css("display", "block");
+	});
+	$("#img2-4").click(function(){
+		$(".hideBg4").css("display", "block");
+	});
+})();
+// =====================
+var dataC = new Array(); 
+dataC.push(new Array("./img/hd/jflogo.jpg",'聚否网络科技','','在这里，找到你的组织！'));
+var cur = 0;   
+var sid = 182;//需要配置sid,在互动交流版块开帖，获取帖的id
+//显示评论
+	var mtime;
+	var checkLogin = function(){
+		var logined = false;
+		$.ajax({
+	        url: "http://www.hijufou.com/rest/open/user/session",
+	        type: "POST",
+	        dataType: "json",
+	        xhrFields: {withCredentials: true},
+	        async: false,
+	        success: function(data) {
+	            if (data.result == true) {
+	        		logined = true;
+	         	}
+	        }
+	    });
+	    return logined;
+	}
+	// function cLogin(){
+	// 	if(!checkLogin()){
+	// 		$.jStorage.set("loginCallback",location.href);
+	// 		location.href="http://www.hijufou.com/m/user/login.html";
+	// 	}
+	// }	
+	document.getElementById("textbox").onfocus=function(e){
+		if(!checkLogin()){
+			$.jStorage.set("loginCallback",location.href);
+			location.href="http://www.hijufou.com/m/user/login.html";
+			// history.back();
+		}
+	};
+	function send(){
+
+		var cmt = document.getElementById("textbox").value;
+		if($.trim(cmt) == ""){
+			alert("评论内容不能为空！");
+		}else{
+			$.ajax({
+				url : "http://www.hijufou.com/rest/comment/add",
+				type : "POST",
+				xhrFields : {withCredentials : true},
+				dataType : "json",
+				data : {
+					"oid" : sid,
+					"type" : 3,
+					"content" : cmt
+				},
+				success : function(data) {
+					if (data.code == 1) {
+						alert("发送成功！");
+						document.getElementById("textbox").value="";
+
+					}
+				}
+			});
+		}
+	}
+	function messageAdd(){
+		$.getJSON("http://www.hijufou.com/rest/open/comment/list", {
+			"offset":cur,//1
+			"total":true,
+			"limit":1,
+			"oid":sid,
+			"type":3,
+			"order":"asc",
+			"sort":"id"
+		}, function(data) {
+			if (data.code == 1 && data.result.list.length>0) {
+
+				var arr=data.result.list;
+			    $.each(arr, function(i, item) {
+			    	var basicurl = "http://www.hijufou.com";
+				    var pic="http://www.hijufou.com/res/mobile/pic/face50.jpg";
+				    if (item.poster.thumbnail != null) {
+				    	pic = item.poster.thumbnail;
+				    	if(pic.indexOf("http")!=0){
+				    		pic=basicurl+pic;
+				    	}
+				    }
+					dataC.push(new Array(pic,item.poster.nickname,"",item.content.replace(/\n/g,"<br>")));
+				});
+				var str="<li class='list' id='list"+(cur+1)+"'><p class='usrInfo'><img src='"+dataC[cur+1][0]+"' class='circle'/><span class='username'>"+dataC[cur+1][1]+"</span></p><p class='content'><span class='fnum'>"+dataC[cur+1][2]+"</span><span class='cmtCtn'>"+dataC[cur+1][3]+"</span></p></li>";
+
+				if(cur >=2){
+					$("li").remove("#list"+(cur-2));
+					
+				}
+				$("#cmtBox").prepend(str);
+				$("#list"+(cur+1)).addClass("slideDown");
+				cur++;
+			}
+
+		});
+		
+	}
+	function initFirst(){
+		var str="<li class='list' id='list"+cur+"'><p class='usrInfo'><img src='"+dataC[cur][0]+"' class='circle'/><span class='username'>"+dataC[cur][1]+"</span></p><p class='content'><span class='fnum'>"+dataC[cur][2]+"</span><span class='cmtCtn'>"+dataC[cur][3]+"</span></p></li>";
+		$("#cmtBox").prepend(str);
+	}
+	initFirst();
+	//
+	icardEvent.addEvent("show",function(){
+		if($("#sec3").hasClass("show")){
+			$(".msgBox").css("display","block");
+			messageAdd();
+			mtime=setInterval(messageAdd,2000);
+		}
+		else{
+			clearInterval(mtime);
+			$(".msgBox").css("display","none");
+		}
+	});
+	
+	
+
+	function check(){
+		var tStr=$(".msgT").val();
+		var tNum=tStr.length;
+		if(tNum>40){
+			tStr=tStr.substr(0,40);
+		}
+		$(".msgT").val(tStr);
+	}
+
+
+</script>
+</html>
