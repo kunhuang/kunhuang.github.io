@@ -14,10 +14,20 @@
 <body>
   <style>
   #main {
-    margin-left: 20%;
-    margin-right: 20%;
-    padding: 2%;
+      line-height: 2em;
+      box-sizing: border-box;
+      padding: 2%;
+      margin: 2em 20%;
+      background: #fff;
+      box-shadow: 0 0 8px #777;
   }  
+  body {
+    background: #eee;
+    font-size: 14px; /* define rem */
+  }
+  .section {
+    background-color: #EAEAEA;
+  }
   </style>
 
   <div id="main">
@@ -25,13 +35,14 @@
     <table>
       <tr>
         <td>
-          <img width="200" src="img/profile.png"/>
+          <img width="200" src="img/profile.jpg"/>
         </td>
         <td>
           <div id="name_contact" style="padding:30px">
             <h1>Kun Huang</h1>
             <h6>kunhuang110 AT gmail DOT com</h6>
-            <h4>Intern at Cisco, San Jose, CA</h4>
+            <h4>Software Engineer Intern at Cisco, San Jose, CA</h4>
+            <h4>Prospective M.S. student at UCSD</h4>
             <h4>Undergraduate student at Zhejiang University, China</h4>
           </div>
         </td>
@@ -57,13 +68,21 @@
     <!-- Education -->
     <div id="Education">
       <h3>Education</h3>
-      <h4>Zhejiang University, China, 09/2011 ~ 07/2015(expected)</h4>
-      <ul>
-        <li>B.E., Software Engineering</li>
-        <li>Overall GPA: 3.92/4.0, Junior GPA 3.97/4.00, Rank: 1/72</li>
-        <li>National Scholarship(twice), Google Scholarship</li>
-        <li>Major Course: Data Structure&Algorithm, Computer Architecture, Operating System, Artificial Intelligence, Data Mining, Software Engineering, ect</li>
-      </ul>
+        <div class="section">
+          <h4>Zhejiang University, China, 09/2011 ~ 07/2015(expected)</h4>
+          <ul>
+            <li>B.E., Software Engineering</li>
+            <li>Overall GPA: 3.92/4.0, Junior GPA 3.97/4.00, Rank: 1/72</li>
+            <li>National Scholarship(twice), Google Scholarship</li>
+            <li>Major Course: Data Structure&Algorithm, Computer Architecture, Operating System, Artificial Intelligence, Data Mining, Software Engineering, ect</li>
+          </ul>
+        </div>
+        <div class="section">
+          <h4>University of California, San Diego, CA, United States, 09/2015(expected) ~ </h4>
+          <ul>
+            <li>M.S., Computer Science</li>
+          </ul>
+        </div>
       <!-- <h4>Coursera, Open Online Course, 09/2012 ~ current</h4>
       <ul>
         <li>Courses: Machine Learning, Stanford U.; Computational Investing, Georgia Institute of Technology</li>
@@ -73,29 +92,45 @@
     <!-- Experience -->
     <div id="Experience">
       <h3>Experience</h3>
-      <h4>IT Intern, Cisco System, San Jose, CA, 08/2014 ~ current</h4> 
+      <h4>Software Engineer Intern, Cisco System, San Jose, CA, 02/2015 ~ current</h4> 
+      <ul>
+        <li>Working on CloudVPN project, which is one of Virtual Managed Services. Vertx.io, MongoDB, Docker are used in the project</li>
+        <li>Working on indoor positioning project, based on iBeacon and Machine Learning method.</li>
+      </ul> 
+      <h4>Data Science Intern, Cisco System, San Jose, CA, 08/2014 ~ 02/2015</h4> 
       <ul>
         <li>Working in Data Science team under CSTG, Smart Analytics Capab.</li>
         <li>Build statistical model on big data from Cisco customer, including network performance, device feature deployment and more.</li>
         <li>Advised and supervised by Dr. Jiabin Zhao[<a href="https://www.linkedin.com/in/jiabin">link</a>], Business Operation Manager, PhD in Mathematics in McGill U.</li>
-      </ul>	
+      </ul> 
       <h4>Research Assistant, CAD&CG Lab[<a href="http://www.cad.zju.edu.cn/english.html">link</a>], Zhejiang University, China, 09/2013 ~ current</h4> 
       <ul>
         <li>Weekly seminars and specific projects in Machine Learning, Computer Vision</li>
         <li>Supervised by Prof. Deng Cai[<a href="http://www.cad.zju.edu.cn/home/dengcai/">link</a>],  Prof. in Zhejiang U, PhD in Computer Science in University of Illinois at Urbana Champaign.</li>
       </ul>
+      <h4>Technical Leader, Huawei-Club, Zhejiang University, 03/2013 ~ 07/2013</h4> 
+      <ul>
+        <li>Team leader and main contributor for Huawei Club of Zhejiang University homepage.</li>
+        <li>Participated in staff training in Huawei Company on technology and management.</li>
+      </ul>
       <h4>PHP Developer, QSC Org., Zhejiang University, 09/2012 ~ 07/2013</h4> 
       <ul>
         <li>Developing LAMP(Linux+Apache+MySQL+PHP) backend of Web applications, "Bug Tracking System", "Mobile Station"</li>
-      </ul>
-      <h4>Technical Leader, Huawei-Club, Zhejiang University, 03/2013 ~ 07/2013</h4> 
-      <ul>
       </ul>
       <hr>
     </div>
     <!-- Projects -->
     <div id="Projects">
       <h3>Projects</h3>
+        <h4>"CloudVPN", Cisco, San Jose, 02/2015 ~ current</h4>
+        <ul>
+          <li>CloudVPN is one of Virtual Managed Services, which uses a self-service online portal to give customers a simple way to select, subscribe to and activate highly secure and scalable Internet services.</li>
+          <li>Responsible for asynchronous communication model with Front-End, Log Analyzer system and business logic.</li>
+        </ul>
+        <h4><a href="http://scikit-learn.org/stable/">scikit-learn</a>, OpenSource Project, 04/2015 ~ current</h4>
+        <ul>
+          <li>Simple and efficient tools for data mining and data analysis</li>
+        </ul>
         <h4>"Correlation Engine", Cisco, San Jose, 08/2014 ~ current</h4>
         <ul>
           <li>Build a correlation-modelling platform for network performance index to find the relation between them.</li>
@@ -141,8 +176,9 @@
     <div id="Skills">
       <h3>Skills</h3>
       <ul>
-        <li>Programming: Matlab, Javascript, Python, C++, PHP, Java</li>
-        <li>Language: Chinese, English</li>
+        <li>Programming: Python, C++, Matlab, Scala, Javascript, Java, PHP</li>
+        <li>Language: English, Chinese</li>
+        <li>Technology: Linux, Github, Vagrant, Docker, OpenCV, Spark, MongoDB, Vertx.io, Scikit-Learn</li>
       </ul>
       <hr>
     </div>
@@ -151,6 +187,7 @@
       <ul>
         <li>College basketball team player in Computer Science Department, Zhejiang University.</li>
         <li>Vice President in Human Resource Dept. of Huawei Club in Zhejiang University.</li>
+        <li>Volunteer experience at Computer History Museum at California, United States.</li>
       </ul>
     </div>
   </div>
