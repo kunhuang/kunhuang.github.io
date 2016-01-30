@@ -1,7 +1,485 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <h1>CSE 190: Assignment 1—Image and Signal Processing</h1>
-        <h3>Kun Huang, A53097903</h3>
-    </body>
+  <head>
+    <title>CSE 190: Assignment 1—Image and Signal Processing</title>
+  </head>
+  <body>
+    <style>
+      .caption-tr{
+        text-align: center;
+      };
+      .image-tr{
+        text-align: center;
+      }
+    </style>
+    <h1>CSE 190: Assignment 1—Image and Signal Processing</h1>
+    <h3>Kun Huang, A53097903</h3>
+
+    <hr>
+    <!-- 3.2 Basic Operations -->
+    <h2>Basic Operations</h2>
+
+    <h3>1. Image::Brighten</h3>
+    The brighten operation is done by interpolation with a black image, taking the input factor as the fraction for original image and (1-factor) as the fraction for the black image. The results are showed below.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-1-brightness-0.0-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-1-brightness-0.5-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-1-brightness-1.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Britghtness 0.0</td>
+        <td>Britghtness 0.5</td>
+        <td>Britghtness 1.0</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-1-brightness-1.5-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-1-brightness-2.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Britghtness 1.5</td>
+        <td>Britghtness 2.0</td>
+      </tr>
+    </tbody></table></center>
+
+
+    <h3>2. Image::ChangeContrast</h3>
+    The change contrast operation is done by interpolation with a gray image with the average image luminance, taking the input factor as the fraction for original image and (1-factor) as the fraction for the gray image. The results are showed below.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-2-contrast--0.5-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-2-contrast-0.5-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-2-contrast-1.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Contrast -0.5</td>
+        <td>Contrast 0.5</td>
+        <td>Contrast 1.0</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-2-contrast-1.5-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-2-contrast-2.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Contrast 1.5</td>
+        <td>Contrast 2.0</td>
+      </tr>
+    </tbody></table></center>
+
+    <h3>3. Image::ChangeSaturation</h3>
+    The change contrast operation is done by pixel interpolation with a gray pixel whose value is the luminance of the corresponding original one. Taking the input factor as the fraction for original pixel and (1-factor) as the fraction for the gray pixel. When factor is negative, we invert the hues or colors of the input image, like a photographic negative. The results are showed below.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-3-saturation--1.0-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-3-saturation-0.0-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-3-saturation-1.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Saturation -1.0</td>
+        <td>Saturation 0.0</td>
+        <td>Saturation 1.0</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-3-saturation-2.0-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-3-saturation-4.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Saturation 2.0</td>
+        <td>Saturation 4.0</td>
+      </tr>
+    </tbody></table></center>
+
+    <h3>4. Image::ChangeGamma</h3>
+    The change gamma is done by simplely apply the change to each pixel with regard to value gamma. The results are showed below.
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-4-gamma-0.8-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-4-gamma-0.9-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-4-gamma-1.0-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Gamma 0.8</td>
+        <td>Gamma 0.9</td>
+        <td>Gamma 1.0</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-4-gamma-1.2-wave.bmp" height="200"></td>
+        <td><img src="images/3-2-4-gamma-1.4-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Gamma 1.2</td>
+        <td>Gamma 1.4</td>
+      </tr>
+    </tbody></table></center>
+
+    <h3>5. Image::Crop</h3>
+    The crop is done by assigning to the old pixels to a new set of pixels, and it's implemented using memcpy which performs much better than naively copying pixels one by one. Below are two examples of cropping the center of the flower and cropping the eyes of mandrill.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-5-crop-0 0 160 120-flower.bmp" height="200"></td>
+        <td><img src="images/3-2-5-crop-70 40 40 40-flower.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Crop 70 40 40 40, get the center of the flower</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-2-5-crop-0 0 512 512-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-2-5-crop-70 10 372 90-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Crop 70 10 372 90, get the eyes of the mandrill</td>
+      </tr>
+    </tbody></table></center>
+
+    <hr>
+    <!-- 3.3 Quantization and Dithering -->
+    <h2>Quantization and Dithering</h2>
+    
+    <h3>1. Image::Quantize</h3>
+    The operation is done on each pixel with regard to the formula provided. The results are showed in below together with RandomDither and FloydSteinbergDither.
+    <h3>2. Image::RandomDither</h3>
+    After the operation of basic quantization, a random noise is added to image. The result are showed in below together with FloydSteinbergDither.
+    <h3>3. Image::FloydSteinbergDither</h3>
+    Two approaches might be applied here. One is to treat the image as toroidal, wrapping around at the edges and the other is to use only valid pixels. The examples showed below is done based on the second approach. 
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-3-1-quantize-1-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-1-quantize-2-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-1-quantize-3-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-1-quantize-4-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-1-quantize-5-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Basic Quantize 1</td>
+        <td>Basic Quantize 2</td>
+        <td>Basic Quantize 3</td>
+        <td>Basic Quantize 4</td>
+        <td>Basic Quantize 5</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-3-2-randomDither-1-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-2-randomDither-2-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-2-randomDither-3-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-2-randomDither-4-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-2-randomDither-5-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>With RandomDither </td>
+        <td>With RandomDither </td>
+        <td>With RandomDither </td>
+        <td>With RandomDither </td>
+        <td>With RandomDither </td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-3-3-FloydSteinbergDither-1-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-3-FloydSteinbergDither-2-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-3-FloydSteinbergDither-3-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-3-FloydSteinbergDither-4-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-3-3-FloydSteinbergDither-5-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>With FloydSteinbergDither</td>
+        <td>With FloydSteinbergDither</td>
+        <td>With FloydSteinbergDither</td>
+        <td>With FloydSteinbergDither</td>
+        <td>With FloydSteinbergDither</td>
+      </tr>
+    </tbody></table></center>
+ 
+    <hr>
+    <!-- 3.4 Convolution and Edge Detection -->
+    <h2>Basic Convolution and Edge Detection</h2>
+    
+    <h3>1. Image::Blur</h3>
+    
+    The blur is done by a (n, n) convolution filter, which is computed by 2-D gaussian. We also need to convert the value into integers. Besides, for dealing with the pixels on edge, we only consider about the valid ones. the Blur has been tested on mandrill with parameters 3, 5, 7, 11, 13, 19
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-1-blur-3-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-1-blur-5-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-1-blur-7-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original Image</td>
+        <td>Blur 3</td>
+        <td>Blur 5</td>
+        <td>Blur 7</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-4-1-blur-11-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-1-blur-13-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-1-blur-19-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Blur 11</td>
+        <td>Blur 13</td>
+        <td>Blur 19</td>
+      </tr>
+    </tbody></table></center>
+    
+    <h3>2. Image::Sharpen</h3>
+    Sharpen is be done by applying the corresponding convolution filter. The results are showed below with 3 examples.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/flower.bmp" height="200"></td>
+        <td><img src="images/3-4-2-sharpen- -flower.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Sharpened image</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/mandrill.bmp" height="200"></td>
+        <td><img src="images/3-4-2-sharpen- -mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Sharpened image</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/wave.bmp" height="200"></td>
+        <td><img src="images/3-4-2-sharpen- -wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Sharpened image</td>
+      </tr>
+    </tbody></table></center>
+
+    <h3>3. Image::EdgeDetect</h3>
+    EdgeDetect is done by computing the gradient of each pixels by applying corresponding filters. The issue mentioned in the assignment about negative numbers is solved by using a new data type(int) instead of Component or Pixels. Then test has been done on checkboard image and debugging to see the gradient value. Finally, the results are showed below with different thresholds.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/checkerboard2.bmp" height="200"></td>
+        <td><img src="images/3-4-3-edgeDetect-10-checkerboard2.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Edge detection with threshold 10</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/wave.bmp" height="200"></td>
+        <td><img src="images/3-4-3-edgeDetect-0-wave.bmp" height="200"></td>
+        <td><img src="images/3-4-3-edgeDetect-10-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Edge detection with threshold 0</td>
+        <td>Edge detection with threshold 10</td>
+      </tr>
+    </tbody></table></center>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/3-4-3-edgeDetect-100-wave.bmp" height="200"></td>
+        <td><img src="images/3-4-3-edgeDetect-500-wave.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Edge detection with threshold 100</td>
+        <td>Edge detection with threshold 500</td>
+      </tr>
+    </tbody></table></center>
+
+    <hr>
+    <!-- 3.5 Antialiased Scale and Shift -->
+    <h2>Antialiased Scale and Shift</h2>
+
+    <h3>1. Image* Image::Scale</h3>
+    All 3 sample methods have been implemented. 
+    <p>IMAGE_SAMPLING_POINT is simple as we only need to locate the nearest pixel which is (floor(u/sx+0.5)), floor(v/sy+0.5))).</p>
+    <p>IMAGE_SAMPLING_HAT is implemented by locating pixels in a specific range and the situation is different when doing magifying or minifying. Basically, the speed of computing is much improved if we only consider the pixels in valid range. Oppsitely, if all pixels are applied to the filter it will perform bad. </p>
+    <p>IMAGE_SAMPLING_MITCHELL is similar to IMAGE_SAMPLING_HAT. We coudl just change the valid range and the filter</p>
+    <p>The results are showed below, please <strong style="color: red;">click the images</strong> to view all the original images and compare them</p>
+    <h4>a. Sampling method as IMAGE_SAMPLING_POINT</h4>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td>
+          <a href="images/mandrill.bmp">
+            <img src="images/mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_POINT-256 256-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_POINT-256 256-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_POINT-256 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_POINT-256 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_POINT-300 300-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_POINT-300 300-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_POINT-1028 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_POINT-1028 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Scale to 256 256</td>
+        <td>Scale to 256 1028</td>
+        <td>Scale to 300 300</td>
+        <td>Scale to 1028 1028</td>
+      </tr>
+    </tbody></table></center>
+
+    <h4>b. Sampling method as IMAGE_SAMPLING_HAT</h4>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td>
+          <a href="images/mandrill.bmp">
+            <img src="images/mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_HAT-256 256-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_HAT-256 256-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_HAT-256 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_HAT-256 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_HAT-300 300-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_HAT-300 300-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_HAT-1028 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_HAT-1028 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Scale to 256 256</td>
+        <td>Scale to 256 1028</td>
+        <td>Scale to 300 300</td>
+        <td>Scale to 1028 1028</td>
+      </tr>
+    </tbody></table></center>
+    
+    <h4>c. Sampling method as IMAGE_SAMPLING_MITCHELL</h4>
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td>
+          <a href="images/mandrill.bmp">
+            <img src="images/mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-256 256-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-256 256-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-256 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-256 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-300 300-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-300 300-mandrill.bmp" height="200">
+          </a>
+        </td>
+        <td>
+          <a href="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-1028 1028-mandrill.bmp">
+            <img src="images/3-5-1-size-IMAGE_SAMPLING_MITCHELL-1028 1028-mandrill.bmp" height="200">
+          </a>
+        </td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Scale to 256 256</td>
+        <td>Scale to 256 1028</td>
+        <td>Scale to 300 300</td>
+        <td>Scale to 1028 1028</td>
+      </tr>
+    </tbody></table></center>
+    
+
+    <h3>2. Image::Shift</h3>
+    The crop is done by assigning to the old pixels to a new set of pixels, and it's implemented using memcpy which performs much better than naively copying pixels one by one. Below are the examples of shifting mandrill.
+
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/mandrill.bmp" height="200"></td>
+        <td><img src="images/3-5-2-shift--100 -100-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-5-2-shift--100 100-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-5-2-shift-100 -100-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-5-2-shift-100 100-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>Shifted -100 -100</td>
+        <td>Shifted -100 100</td>
+        <td>Shifted 100 -100</td>
+        <td>Shifted 100 100</td>
+      </tr>
+    </tbody></table></center>
+    
+    <hr>
+    <!-- 3.6 Fun nonlinear filters -->
+    <h2>Fun nonlinear filters: Sine transformation</h2>
+    SINE function has been applied here to make distort the images.
+    <!-- TODO -->
+    <center><table><tbody>
+      <tr class="image-tr">
+        <td><img src="images/mandrill.bmp" height="200"></td>
+        <td><img src="images/3-6-fun-4-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-6-fun-8-mandrill.bmp" height="200"></td>
+        <td><img src="images/3-6-fun-16-mandrill.bmp" height="200"></td>
+      </tr>
+      <tr class="caption-tr">
+        <td>Original image</td>
+        <td>With 4 peaks</td>
+        <td>With 8 peaks</td>
+        <td>With 16 peaks</td>
+      </tr>
+    </tbody></table></center>
+   
+    <hr>
+    <!-- 3.6 Fun nonlinear filters -->
+    <h2>Compositing and Morphing</h2>
+    <!-- TODO -->
+    
+  </body>
 </html>
